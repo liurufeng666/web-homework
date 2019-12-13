@@ -1,0 +1,113 @@
+/*
+* @Author: 22213
+* @Date:   2019-12-09 22:00:56
+* @Last Modified by:   22213
+* @Last Modified time: 2019-12-13 12:18:00
+*/
+
+*{
+	padding: 0;
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+}
+.contains{
+	/* width: 1400px; */
+	height: 20px;
+	background: #ccc;
+	/* margin: 100px auto; */
+	position: relative;
+	/* overflow: hidden; */
+}
+.picture{
+	width: 16px;
+	margin-left: 260px;
+	margin-top: 1px;
+	position: relative;
+	float: left;
+}
+.textbox{
+	width: 1000px;
+	margin-left: 10px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+.boxa{
+	width: 911px;
+	margin-left: 10px;
+	position: relative;
+	float: left;
+	color: red;
+	font-size: 14.83px;
+}
+.container{
+	width: 1400px;
+	height: 462px;
+	margin: 100px auto;
+	margin-top: 10px;
+	position: relative;
+	overflow: hidden; 
+}
+.box{
+	width: 1200px;
+	height: 384px;
+	margin: 100px auto;
+	margin-top: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+.silder{
+	width: 8400px;
+	position: absolute;
+	left: -1200px;
+}
+.slide{
+	width: 1200px;
+	overflow: hidden;
+	float: left;
+}
+.box>span{
+	display: block;
+	width: 30px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+	color: rgb(255,255,255,0.75);
+	top: 175px;
+	line-height: 50px;
+	background: rgb(255,0,0);
+	font-size: 30px;
+	position: absolute;
+	/*display: none;*/
+	opacity: 0;
+}
+#left{
+	left: 30px;
+}
+#right{
+	right: 30px;
+}
+.nav{
+	position: absolute;
+	left: 500px;
+	bottom: 20px;
+}
+.nav>li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+	font-size: 12px;
+	display: inline;
+	line-height: 20px;
+}
+.nav .active{
+	background: red;
+	color: #fff;
+}

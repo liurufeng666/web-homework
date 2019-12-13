@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>雪梨任务7-轮播图</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="js/animate.js"></script>
+</head>
+<body>
+	<!-- 灰色部分 -->
+	<div class="contains">
+		<!-- 存放图片 -->
+		<div class="picture"><img src="images/a15.png"></div>
+		<!-- 存放文字 -->
+		<div class = "textbox">
+			<div class="boxa" id="boxa">
+				<p>[温馨提示]最近有不少不法分子在网上骗人，请大家注意！！！</p>
+			</div>
+		</div>
+	</div>
+	<!-- 存放下方循环滚动播放的图片 -->
+	<div class="container">
+		<div class="box" id="box">
+			<div class="silder" id="silder">
+				<div class="slide"><img src="images/b5.png" alt =""></div>
+				<div class="slide"><img src="images/b1.png" alt =""></div>
+				<div class="slide"><img src="images/b2.png" alt =""></div>
+				<div class="slide"><img src="images/b3.png" alt =""></div>
+				<div class="slide"><img src="images/b4.png" alt =""></div>
+				<div class="slide"><img src="images/b5.png" alt =""></div>
+				<div class="slide"><img src="images/b1.png" alt =""></div>
+			</div>
+			<!-- 翻页标志 > < -->
+			<span id="left"> < </span>
+			<span id="right"> > </span>
+			<!-- 下方小按钮 ①②③④⑤-->
+			<ul class="nav" id="nav">
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+	var boxa = document.getElementsByClassName("boxa");
+	var box = document.getElementById("box");
+	var silder = document.getElementById("silder");
+	var left = document.getElementById("left");
+	var right = document.getElementById("right");
+	var oNavList = document.getElementById("nav").children;
+	var index = 1;
+	var timer;
+	var isMoving = false;
+
+	//上方字体滑动设置延时(从右向左开始滑动)
+	var textLeft = "990px";
+	function leftMoving(){
+		if(textLeft == "-411px"){
+			textLeft = "990px";
+		}
+		else{
+			textLeft = (parseInt(textLeft)-1)+"px";
+			boxa[0].style.left = textLeft;
+		}
+	}
+	setInterval(leftMoving,15);
+
+	//鼠标划入清除定时器同时箭头淡入
+	box.onmouseover = function(){
+		animate(left,{opacity:50});
+		animate(right,{opacity:50});
+		clearInterval(timer)
+	}
+	//鼠标划出开定时器同时箭头淡出
+	box.onmouseout = function(){
+		animate(left,{opacity:0})
+		animate(right,{opacity:0})
+		timer = setInterval(nextPicture,3000);
+	}
+	// 下一张图片
+	function nextPicture(){
+		if(isMoving){
+			return;
+		}
+		isMoving = true;
+		index++;
+		navmove();
+		animate(silder,{left:-1200*index},function(){
+			if(index == 6){
+				silder.style.left = "-1200px";
+				index = 1;
+			}
+			isMoving = false;
+		});
+	}
+	// 上一张图片
+	function previousPicture(){
+		if(isMoving){
+			return;
+		}
+		isMoving = true;
+		index--;
+		navmove();
+		animate(silder,{left:-1200*index},function(){
+			if(index == 0){
+				silder.style.left = "-6000px";
+				index = 5;
+			}
+			isMoving = false;
+		});
+	}
+	// 上一页、下一页图标点击实现翻页
+	right.onclick = nextPicture;
+	left.onclick = previousPicture;
+	// 小图标点击事件
+	for(var i = 0;i < oNavList.length;++i){
+		oNavList[i].index = i;
+		oNavList[i].onclick = function(){
+			index = this.index + 1;
+			navmove();
+			animate(silder,{left:-1200*index});
+		}
+	}
+	// 下方小图标的转变
+	function navmove(){
+		for(var i = 0;i < oNavList.length;++i){
+			oNavList[i].className = "";
+		}
+		if(index > 5){
+			oNavList[0].className = "active";
+		}
+		else if(index <= 0){
+			oNavList[4].className = "active";
+		}
+		else{
+			oNavList[index-1].className = "active";
+		}
+	}
+	timer = setInterval(nextPicture,3000);
+	
+</script>
+</html>
