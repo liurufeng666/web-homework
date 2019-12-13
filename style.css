@@ -2,7 +2,7 @@
 * @Author: 22213
 * @Date:   2019-12-09 22:00:56
 * @Last Modified by:   22213
-* @Last Modified time: 2019-12-13 12:18:00
+* @Last Modified time: 2019-12-13 17:18:48
 */
 
 *{
@@ -20,9 +20,14 @@ ul,li{
 	position: relative;
 	/* overflow: hidden; */
 }
+.greyBox{
+	width: 1200px;
+	position: relative;
+	margin: 0 auto;
+}
 .picture{
 	width: 16px;
-	margin-left: 260px;
+	margin-left: 100px;
 	margin-top: 1px;
 	position: relative;
 	float: left;
@@ -41,14 +46,6 @@ ul,li{
 	float: left;
 	color: red;
 	font-size: 14.83px;
-}
-.container{
-	width: 1400px;
-	height: 462px;
-	margin: 100px auto;
-	margin-top: 10px;
-	position: relative;
-	overflow: hidden; 
 }
 .box{
 	width: 1200px;
