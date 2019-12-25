@@ -2,7 +2,7 @@
 * @Author: 22213
 * @Date:   2019-12-23 13:45:09
 * @Last Modified by:   22213
-* @Last Modified time: 2019-12-25 18:05:06
+* @Last Modified time: 2019-12-25 18:22:14
 */
 *{
 	padding: 0;
@@ -159,7 +159,6 @@ a{
 	height: 630px;
 	margin:0 auto;
 	margin-top: 10px;
-	background:  #EBEDEF;
 }
 .mixBox img{
 	margin-left: 5px;
@@ -172,7 +171,6 @@ a{
 	margin-left: 5px;
 	position: relative;
 	float: left;
-	/* border: 2px solid blue; */
 }
 .smallImgsBox{
 	width: 655px;
@@ -264,7 +262,6 @@ a{
 	width: 525px;
 	height: 530px;
 	margin-top: 10px;
-	/* background: yellow; */
 	overflow: hidden;
 }
 /* ------------------------国内温泉民宿介绍---------------------------- */
@@ -273,7 +270,6 @@ a{
 	height: 800px;
 	margin:0 auto;
 	margin-top: 20px;
-	background: #EBEDEF;
 }
 .h{
 	font-size: 40px;
@@ -313,7 +309,6 @@ a{
 	position: relative;
 	float: left;
 	margin-left: 30px;
-	/* background: red; */
 	margin-top: 135px;
 	overflow: hidden;
 }
